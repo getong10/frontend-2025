@@ -1,0 +1,277 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.site-wrapper > * { /* Стили для всех дочерних элементов для наглядности */
+  display: grid;
+  place-items: center; /* Центрируем текст в ячейках */
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  min-height: 100px;
+}
+
+/* Наш GRID-КОНТЕЙНЕР */
+.site-wrapper {
+  display: grid; /* 1. Включаем Grid! */
+  min-height: 100vh;
+  
+  /* 2. Определяем структуру колонок и строк */
+  grid-template-columns: 3fr 1fr; /* Основной контент в 3 раза шире сайдбара */
+  grid-template-rows: auto 1fr auto; /* Шапка/подвал - по контенту, main - всё остальное */
+  
+  /* 3. "Рисуем" наш макет с помощью областей! */
+  grid-template-areas:
+    "header header"
+    "main   sidebar"
+    "footer footer";
+  
+  gap: 10px; /* 4. Добавляем отступы между блоками */
+}
+
+/* 5. Распределяем дочерние элементы по нарисованным областям */
+.site-header {
+  grid-area: header;
+  background-color: #8e44ad;
+  color: white;
+}
+.site-main {
+  grid-area: main;
+  background-color: #ecf0f1;
+}
+.site-sidebar {
+  grid-area: sidebar;
+  background-color: #bdc3c7;
+}
+.site-footer {
+  grid-area: footer;
+  background-color: #34495e;
+  color: white;
+  min-height: 80px;
+}
+
+/* Теория */
+
+/* Единицы измерения в Grid */
+/* 1. fr (fraction) */
+/* Дробная единица, представляющая долю свободного пространства: */
+css.container {
+  grid-template-columns: 1fr 2fr 1fr; /* соотношение 1:2:1 */
+}
+
+/* 2. minmax() */
+/* Функция для определения диапазона размеров: */
+css.container {
+  grid-template-columns: minmax(200px, 1fr) 1fr;
+  /* первая колонка: минимум 200px, максимум 1fr */
+}
+
+/* 3. fit-content() */
+/* Функция для адаптивного размера: */
+css.container {
+  grid-template-columns: fit-content(300px) 1fr;
+  /* размер по содержимому, но не больше 300px */
+}
+
+/* 4. auto */
+/* Автоматический размер на основе содержимого: */
+css.container {
+  grid-template-columns: auto 1fr auto;
+}
+
+
+
+/* Свойства Grid-контейнера */
+/* 1. display */
+css.container {
+  display: grid;        /* блочный grid-контейнер */
+  display: inline-grid; /* строчный grid-контейнер */
+}
+
+/* 2. grid-template-columns и grid-template-rows */
+/* Определяют размеры столбцов и строк: */
+css.container {
+  /* Фиксированные размеры */
+  grid-template-columns: 200px 1fr 100px;
+  grid-template-rows: 50px 1fr 50px;
+  
+  /* Повторяющиеся колонки */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  
+  /* Именованные линии */
+  grid-template-columns: [start] 250px [content-start] 1fr [content-end] 250px [end];
+}
+
+/* 3. grid-template-areas */
+/* Создание именованных областей сетки: */
+css.container {
+  grid-template-areas:
+    "header header header"
+    "sidebar content content"
+    "footer footer footer";
+}
+
+/* 4. grid-template */
+/* Сокращенное свойство для grid-template-rows, grid-template-columns и grid-template-areas: */
+css.container {
+  grid-template:
+    "header header" 50px
+    "sidebar content" 1fr
+    "footer footer" 30px
+    / 200px 1fr;
+}
+
+/* 5. gap (row-gap, column-gap) */
+/* Промежутки между ячейками: */
+css.container {
+  gap: 20px;           /* одинаковые отступы */
+  gap: 20px 10px;      /* строки и столбцы отдельно */
+  row-gap: 20px;       /* только между строками */
+  column-gap: 10px;    /* только между столбцами */
+}
+
+/* 6. justify-items */
+/* Выравнивание содержимого ячеек по горизонтали: */
+css.container {
+  justify-items: stretch; /* по умолчанию, заполняет ячейку */
+  justify-items: start;   /* к левому краю */
+  justify-items: end;     /* к правому краю */
+  justify-items: center;  /* по центру */
+}
+
+/* 7. align-items */
+/* Выравнивание содержимого ячеек по вертикали: */
+css.container {
+  align-items: stretch; /* по умолчанию */
+  align-items: start;   /* к верху */
+  align-items: end;     /* к низу */
+  align-items: center;  /* по центру */
+}
+
+/* 8. place-items */
+/* Сокращенное свойство для align-items и justify-items: */
+css.container {
+  place-items: center;        /* center center */
+  place-items: start end;     /* align-items: start; justify-items: end; */
+}
+
+/* 9. justify-content */
+/* Выравнивание всей сетки по горизонтали внутри контейнера: */
+css.container {
+  justify-content: start;         /* по умолчанию */
+  justify-content: end;           /* к правому краю */
+  justify-content: center;        /* по центру */
+  justify-content: stretch;       /* растягивание */
+  justify-content: space-around;  /* с отступами */
+  justify-content: space-between; /* равномерно */
+  justify-content: space-evenly;  /* одинаковые отступы */
+}
+
+/* 10. align-content */
+/* Выравнивание всей сетки по вертикали внутри контейнера: */
+css.container {
+  align-content: start;         /* по умолчанию */
+  align-content: end;           /* к низу */
+  align-content: center;        /* по центру */
+  align-content: stretch;       /* растягивание */
+  align-content: space-around;  /* с отступами */
+  align-content: space-between; /* равномерно */
+  align-content: space-evenly;  /* одинаковые отступы */
+}
+
+/* 11. place-content */
+/* Сокращенное свойство для align-content и justify-content: */
+css.container {
+  place-content: center;      /* center center */
+  place-content: start end;   /* align-content: start; justify-content: end; */
+}
+
+/* Свойства Grid-элементов */
+/* 1. grid-column и grid-row */
+/* Размещение элемента по линиям сетки: */
+css.item {
+  grid-column: 1 / 3;        /* от 1-й до 3-й линии столбцов */
+  grid-row: 2 / 4;           /* от 2-й до 4-й линии строк */
+  
+  /* Альтернативный синтаксис */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  
+  /* Span синтаксис */
+  grid-column: span 2;       /* занимает 2 столбца */
+  grid-row: span 3;          /* занимает 3 строки */
+}
+
+/* 2. grid-area */
+/* Размещение элемента в именованной области или указание всех координат: */
+css.item {
+  grid-area: header;         /* именованная область */
+  
+  /* Или указание координат: row-start / column-start / row-end / column-end */
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+/* 3. justify-self */
+/* Выравнивание конкретного элемента по горизонтали в его ячейке: */
+css.item {
+  justify-self: start;   /* к левому краю */
+  justify-self: end;     /* к правому краю */
+  justify-self: center;  /* по центру */
+  justify-self: stretch; /* заполняет ячейку */
+}
+
+/* 4. align-self */
+/* Выравнивание конкретного элемента по вертикали в его ячейке: */
+css.item {
+  align-self: start;   /* к верху */
+  align-self: end;     /* к низу */
+  align-self: center;  /* по центру */
+  align-self: stretch; /* заполняет ячейку */
+}
+
+/* 5. place-self */
+/* Сокращенное свойство для align-self и justify-self: */
+css.item {
+  place-self: center;      /* center center */
+  place-self: start end;   /* align-self: start; justify-self: end; */
+}
+
+
+/* Продвинутые функции Grid */
+
+/* 1. repeat() */
+/* Повторение паттерна: */
+css.container {
+  /* 12 колонок одинакового размера */
+  grid-template-columns: repeat(12, 1fr);
+  
+  /* Повторение паттерна */
+  grid-template-columns: repeat(3, 200px 1fr);
+  /* Результат: 200px 1fr 200px 1fr 200px 1fr */
+}
+
+/* 2. auto-fit и auto-fill */
+/* Автоматическое количество треков: */
+css.container {
+  /* auto-fit: пустые треки схлопываются */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  
+  /* auto-fill: пустые треки сохраняются */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* 3. Subgrid (CSS Grid Level 2) */
+/* Наследование сетки от родителя: */
+css.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.child {
+  display: grid;
+  grid-column: 2 / 4;
+  grid-template-columns: subgrid; /* наследует колонки родителя */
+}

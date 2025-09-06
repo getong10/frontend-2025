@@ -1,0 +1,119 @@
+/* CSS Styles */
+
+/* Основные единицы измерения */
+
+/* селектор {
+  свойство: значение;
+  свойство-2: значение-2;
+} */
+
+body {
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: #000000;
+}
+
+p {
+  color: #000000;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  height: 100%;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+}
+
+.block {
+  width: 60px;
+}
+
+#map {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Примеры селекторов */
+
+a.external { color: red; } /* выбирает все <a> с классом external */
+
+input[name="email"] {
+  /* Something */
+}
+
+a[href^="https:"] {
+  /* Something */
+}
+
+img[alt] {
+  /* Something */
+} /* имеет атрибут alt */
+
+.nav a { /* все <a> внутри .nav на любом уровне */ }
+
+ul > li { /* только непосредственные <li> внутри <ul> */ }
+
+h1 + p { /* первый <p> сразу после <h1> */ }
+
+h2 ~ p { /* все <p> после <h2> в том же родителе */ }
+
+h1, h2, h3 { margin-top: 0; } /* перечисление */
+
+/* Псевдоклассы */
+button:disabled { opacity: 0.6; }
+input:focus { outline: 2px solid Highlight; }
+
+.container:nth-child(2n+1) {/* Четные */}
+
+/* зебра-таблица */
+tr:nth-child(odd) { background: #f7f7f7; }
+
+/* каждый третий элемент, начиная с 1 */
+li:nth-child(3n+1) { font-weight: bold; }
+
+/* базовые */
+div, p, a {}
+
+/* классы и id */
+.header { }
+#main { }
+
+/* атрибуты */
+input[type="email"] { }
+
+/* комбинирующие */
+.container > .row { }     /* прямой потомок */
+h1 + p { }                /* сосед сверху */
+h2 ~ p { }                /* все последующие братья */
+
+/* псевдоклассы */
+a:hover { }               /* при наведении */
+li:nth-child(odd) { }     /* нечётные элементы */
+
+/* псевдоэлементы */
+p::first-line { font-weight: bold; }
+button::after { content: '✓'; }
+
+p::before { content: 'asdsadsad' }
+
+/* группировка */
+h1, h2, h3 { margin: 0; }
+
+/* модерн */
+:is(.card, .panel) h2 { }
+:where(.reset) { margin:0; } /* zero specificity */
+
+/* Пример аккордеона */
+.accordion__panel {
+  padding: 10px;
+  border: 1px solid #ccc;
+}

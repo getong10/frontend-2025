@@ -1,0 +1,124 @@
+<!DOCTYPE html> <!-- Указание типа документа (HTML5) -->
+
+<html lang="en"> <!-- Язык содержимого страницы -->
+<head> <!-- Метаданные документа -->
+  <meta charset="UTF-8"> <!-- Кодировка символов -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Масштаб и адаптивность страницы -->
+  <link rel="icon" href="favicon.ico"> <!-- Иконка сайта -->
+
+  <title>Hello world</title> <!-- Заголовок страницы (отображается на вкладке браузера) -->
+
+  <meta name="description" content="This is a description of the page"> <!-- Краткое описание страницы -->
+  <meta name="keywords" content="HTML, CSS, JavaScript"> <!-- Ключевые слова (устаревший тег, поисковики игнорируют) -->
+  <meta name="author" content="Kaspirovich Daniil"> <!-- Автор документа -->
+  <meta name="robots" content="index, follow"> <!-- Управление индексацией поисковиками (по умолчанию index, follow) -->
+  <meta name="googlebot" content="index, follow"> <!-- Настройки индексации для Google -->
+  <meta name="bingbot" content="index, follow"> <!-- Настройки индексации для Bing -->
+
+  <link rel="stylesheet" href="style.css"> <!-- Подключение таблицы стилей -->
+  <script src="script.js"></script> <!-- Подключение JS-файла -->
+</head>
+<body> <!-- Основное содержимое страницы -->
+  <!-- Заголовки -->
+  <h1>Hello world h1</h1> <!-- Главный заголовок -->
+  <h2>Hello world h2</h2>
+  <h3>Hello world h3</h3>
+  <h4>Hello world h4</h4>
+  <h5>Hello world h5</h5>
+  <h6>Hello world h6</h6>
+
+  <p>Hello world p</p> <!-- Абзац -->
+  <span>Hello world span</span> <!-- Встроенный контейнер -->
+
+  <!-- Таблица -->
+  <table>
+    <tr> <!-- Строка -->
+      <th>Имя</th> <!-- Заголовок -->
+      <th>Возраст</th>
+    </tr>
+    <tr>
+      <td>Алиса</td> <!-- Ячейка -->
+      <td>20</td>
+    </tr>
+  </table>
+
+  <!-- Семантическое форматирование текста -->
+  <strong>Hello world strong</strong> <!-- Важный текст (жирный) -->
+  <em>Hello world em</em> <!-- Акцентированный текст (курсив) -->
+  <mark>Hello world mark</mark> <!-- Подсвеченный текст -->
+  <small>Hello world small</small> <!-- Второстепенный текст (меньше по размеру) -->
+  <del>Hello world del</del> <!-- Удалённый (зачёркнутый) текст -->
+  <ins>Hello world ins</ins> <!-- Добавленный (подчёркнутый) текст -->
+  <sub>Hello world sub</sub> <!-- Нижний индекс -->
+  <sup>Hello world sup</sup> <!-- Верхний индекс -->
+  <code>onClick(event: Event): void { console.log(event); }</code> <!-- Фрагмент кода -->
+  <pre>Hello world pre</pre> <!-- Предварительно форматированный текст -->
+  <blockquote>Hello world blockquote</blockquote> <!-- Цитата (блочный элемент) -->
+  <q>Hello world q</q> <!-- Краткая цитата (строчный элемент) -->
+  <abbr title="Abbreviation">Hello world abbr</abbr> <!-- Аббревиатура -->
+  <bdo dir="rtl">Hello world bdo</bdo> <!-- Изменение направления текста -->
+  <cite>Hello world cite</cite> <!-- Название произведения -->
+  <dfn>Hello world dfn</dfn> <!-- Определяемый термин -->
+  <i>Hello world i</i> <!-- Выделение (курсив без акцента) -->
+  <kbd>Hello world kbd</kbd> <!-- Ввод с клавиатуры -->
+  <samp>Hello world samp</samp> <!-- Пример вывода программы -->
+  <var>Hello world var</var> <!-- Переменная -->
+  <time datetime="2023-10-01">2023-10-01</time> <!-- Дата/время -->
+  <meter value="50" min="0" max="100">50%</meter> <!-- Индикатор значения -->
+  <progress value="50" max="100">50%</progress> <!-- Индикатор прогресса -->
+  <output for="a b">Hello world output</output> <!-- Результат вычислений -->
+
+  <!-- Встраиваемые элементы -->
+  <iframe src="https://www.google.com" title="Google"></iframe> <!-- Встроенный фрейм -->
+  <map name="map">
+    <area shape="rect" coords="0,0,100,100" href="https://www.google.com" alt="Google"> <!-- Область на карте изображения -->
+  </map>
+  <canvas>Hello world canvas</canvas> <!-- Элемент для рисования -->
+  <audio src="audio.mp3" controls></audio> <!-- Аудио -->
+  <video src="video.mp4" controls></video> <!-- Видео -->
+  <embed src="video.mp4" type="video/mp4"> <!-- Встраивание мультимедиа/объектов -->
+  <object data="video.mp4" type="video/mp4"></object> <!-- Встраивание объектов -->
+  <picture>
+    <source srcset="image.webp" type="image/webp">
+    <img src="image.png" alt="Example image"> <!-- Фолбэк -->
+  </picture> <!-- Адаптивное изображение -->
+
+  <!-- Структурные элементы -->
+  <hr> <!-- Горизонтальная линия -->
+  <br> <!-- Перенос строки -->
+  <wbr> <!-- Возможное место переноса слова -->
+  <br>
+
+  <!-- Формы -->
+  <button>Hello world button</button> <!-- Кнопка -->
+  <input type="text" placeholder="Enter your name"> <!-- Текстовое поле -->
+  <input type="password" placeholder="Enter your password"> <!-- Пароль -->
+  <input type="email" placeholder="Enter your email"> <!-- Email -->
+  <input type="number" placeholder="Enter your number"> <!-- Число -->
+  <input type="date"> <!-- Дата -->
+  <input type="time"> <!-- Время -->
+  <input type="submit" value="Submit"> <!-- Кнопка отправки -->
+  <a href="https://www.google.com">Google</a> <!-- Ссылка -->
+  <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo"> <!-- Изображение -->
+
+  <!-- Семантика -->
+  <header> <!-- шапка страницы или раздела -->
+    <h1>Название сайта</h1>
+    <nav> <!-- навигация -->
+      <a href="#">Главная</a>
+      <a href="#">О нас</a>
+    </nav>
+  </header>
+  <main> <!-- основное содержимое -->
+    <article> <!-- самостоятельный материал -->
+      <h2>Новость дня</h2>
+      <p>Сегодня отличная погода!</p>
+    </article>
+  </main>
+  <footer>© 2025</footer> <!-- подвал страницы -->
+
+  <div>Hello world div</div> <!-- Блочный контейнер -->
+
+  <script src="script.js"></script> <!-- Подключение скрипта -->
+</body>
+</html>

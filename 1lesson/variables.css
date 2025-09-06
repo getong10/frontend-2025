@@ -1,0 +1,68 @@
+/* Переменные */
+
+:root {
+  --main-color: #3498db;
+  --padding: 16px;
+}
+
+/* Использование */
+body {
+  color: var(--main-color);
+  padding: var(--padding);
+  color: var(--accent-color, red); /* если --accent-color не задана — красный (fallback) */ 
+}
+
+
+/* Функции */
+
+* {
+  /* Цвета */
+  color: rgb(255,0,0); /* значения 0–255 */
+  color: rgba(255,0,0,0.5); /* прозрачностью 0–1 */
+  color: hsl(120, 100%, 50%); /* оттенок, насыщенность, светлота */
+  color: hsla(120, 100%, 50%, 0.5); /* прозрачностью */
+
+  /* Вычисления */
+  width: calc(100% - 50px);
+  padding: calc(var(--padding) / 2);
+
+  /* ширина не меньше 200px, не больше 500px, идеальная 50% */
+  width: clamp(200px, 50%, 500px);
+
+  font-size: min(5vw, 20px); /* размер не больше 20px */
+  height: max(300px, 50vh);  /* минимум 300px или 50% высоты */
+
+  /* Функции для позиционирования и трансформаци */
+  transform: translate(10px, 20px) rotate(45deg) scale(1.2);
+
+  /* Градиенты */
+  background: linear-gradient(to right, red, yellow);
+  background: radial-gradient(circle, red 0%, blue 100%);
+
+  /* смешивание цветов */
+  background: color-mix(in srgb, var(--main-color) 50%, blue 50%);
+
+  /* Переменные и функции */
+  /* 
+  :root {
+    --base: 16px;
+    --scale: 1.5;
+  }
+  
+  h1 {
+    font-size: calc(var(--base) * var(--scale) * 2);
+    color: var(--main-color, black);
+  }
+  
+  .container {
+    width: clamp(200px, 50%, 600px);
+    padding: calc(var(--base) * 2);
+  } 
+  */
+}
+
+@media (min-width: 768px) {
+  .responsive-element {
+    visibility: hidden;
+  }
+}

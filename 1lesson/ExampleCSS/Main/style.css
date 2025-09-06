@@ -1,0 +1,132 @@
+/* --- Глобальные стили и сброс --- */
+* {
+  /* Применяем border-box ко всем элементам для предсказуемой верстки */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Свойства для ТЕКСТА и ФОНА */
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex; /* Используем flex для центрирования карточки */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Чтобы центрирование работало по вертикали */
+}
+
+
+/* --- Основная карточка --- */
+.article-card {
+  /* Свойства БЛОЧНОЙ МОДЕЛИ */
+  width: 350px;
+  margin: 20px; /* Внешний отступ */
+  border: 1px solid #ddd; /* Рамка */
+  
+  /* ВИЗУАЛЬНЫЕ ЭФФЕКТЫ */
+  background-color: #ffffff;
+  border-radius: 15px; /* Скругление углов */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень */
+  overflow: hidden; /* Скрываем все, что выходит за пределы скругленных углов */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для hover */
+}
+
+/* Эффект при наведении */
+.article-card:hover {
+  transform: translateY(-10px); /* Поднимаем карточку */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- Изображение --- */
+.card-image-container {
+  /* ПОЗИЦИОНИРОВАНИЕ */
+  position: relative; /* Родитель для абсолютного позиционирования значка */
+}
+
+.card-image {
+  /* БЛОЧНАЯ МОДЕЛЬ */
+  width: 100%; /* Растягиваем по ширине родителя */
+  height: auto;
+  display: block; /* Убираем лишний отступ под изображением */
+}
+
+.image-badge {
+  /* ПОЗИЦИОНИРОВАНИЕ */
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10; /* Будет поверх картинки */
+  
+  /* ТЕКСТ и БЛОЧНАЯ МОДЕЛЬ */
+  background-color: #ff4500;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+/* --- Контент карточки --- */
+.card-content {
+  padding: 20px; /* Внутренний отступ */
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.card-description {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+
+/* --- Список тегов (Flexbox) --- */
+.tags-list {
+  /* РАСКЛАДКА FLEXBOX */
+  display: flex;
+  flex-wrap: wrap; /* Позволяем переноситься на новую строку */
+  gap: 8px; /* Расстояние между тегами */
+  list-style-type: none; /* Убираем маркеры списка */
+  margin-bottom: 20px;
+}
+
+.tag-item {
+  background-color: #e0e0e0;
+  color: #555;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+
+/* --- Кнопка --- */
+.read-more-btn {
+  /* РАСКЛАДКА и БЛОЧНАЯ МОДЕЛЬ */
+  display: inline-block; /* Позволяет задать отступы и размеры, но остается в строке */
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  
+  /* ТЕКСТ */
+  text-decoration: none; /* Убираем подчеркивание у ссылки */
+  text-align: center;
+  font-weight: bold;
+  
+  /* ВИЗУАЛ */
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #0056b3;
+}

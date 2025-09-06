@@ -1,0 +1,67 @@
+/* Display */
+
+/* block */
+css.block-element {
+  display: block;
+  width: 200px;        /* можно задавать ширину */
+  height: 100px;       /* можно задавать высоту */
+  margin: 20px;        /* все виды отступов работают */
+  padding: 15px;
+  background: #f0f0f0;
+}
+
+/* inline */
+css.inline-element {
+  display: inline;
+  /* width: 200px;     НЕ РАБОТАЕТ для inline */
+  /* height: 100px;    НЕ РАБОТАЕТ для inline */
+  margin: 20px;        /* только горизонтальные margin действуют на поток */
+  padding: 15px;       /* padding добавляется, но не влияет на высоту строки */
+  background: #f0f0f0;
+}
+
+/* inline-block */
+css.inline-block-element {
+  display: inline-block;
+  width: 200px;        /* РАБОТАЕТ */
+  height: 100px;       /* РАБОТАЕТ */
+  margin: 20px;        /* все отступы РАБОТАЮТ */
+  padding: 15px;
+  background: #f0f0f0;
+  vertical-align: top; /* для выравнивания с соседними элементами */
+}
+
+/* none */
+css.hidden-element {
+  display: none; /* элемент исчезает полностью */
+}
+
+/* Отличие от visibility: hidden */
+css.visibility-hidden {
+  visibility: hidden; /* элемент невидим, но место занимает */
+}
+
+.display-none {
+  display: none;      /* элемент исчезает полностью, место не занимает */
+}
+
+/* table */
+css.table-layout {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+  padding: 10px;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+}
+
+/* много других */
+

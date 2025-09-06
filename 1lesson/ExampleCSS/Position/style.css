@@ -1,0 +1,149 @@
+/* Позиционирование */
+
+/* static */
+css.static-element {
+  position: static; /* значение по умолчанию */
+  top: 50px;        /* ИГНОРИРУЕТСЯ */
+  left: 100px;      /* ИГНОРИРУЕТСЯ */
+}
+
+/* relative */
+css.relative-element {
+  position: relative;
+  top: 20px;        /* сдвигается на 20px вниз от обычной позиции */
+  left: 30px;       /* сдвигается на 30px вправо от обычной позиции */
+  z-index: 1;       /* можно использовать z-index */
+}
+
+/* Пример - корректировка иконки: */
+css.icon {
+  position: relative;
+  top: 2px; /* выравнивание с текстом */
+}
+
+/* absolute */
+css.absolute-element {
+  position: absolute;
+  top: 50px;        /* 50px от верха позиционирующего родителя */
+  right: 20px;      /* 20px от правого края позиционирующего родителя */
+  width: 200px;     /* нужно явно задавать размеры */
+  height: 100px;
+}
+
+css.stretched-absolute {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;     /* растягивается по высоте */
+  left: 10px;
+  right: 10px;      /* растягивается по ширине */
+}
+
+/* Центрирование абсолютных элементов: */
+/* Классический способ */
+css.centered-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Современный способ с известными размерами */
+.centered-known-size {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  margin: auto;
+}
+
+/* fixed */
+css.fixed-element {
+  position: fixed;
+  top: 20px;        /* всегда 20px от верха окна браузера */
+  right: 20px;      /* всегда 20px от правого края окна браузера */
+  width: 300px;
+  height: 200px;
+}
+
+/* Пример фиксированного заголовка: */
+css.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* Компенсация для основного контента */
+.main-content {
+  padding-top: 60px; /* высота фиксированного заголовка */
+}
+
+
+/* sticky */
+css.sticky-element {
+  position: sticky;
+  top: 20px;        /* "прилипает" когда достигает 20px от верха */
+  background: #fff;
+  padding: 10px;
+}
+
+/* Пример sticky навигации: */
+css.sticky-nav {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 100;
+}
+
+/* Sticky элемент в контейнере с overflow */
+.scrollable-container {
+  height: 400px;
+  overflow-y: auto;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #f5f5f5;
+  padding: 10px;
+}
+
+
+/* z-index */
+css.layer-1 { position: relative; z-index: 1; }
+.layer-2 { position: relative; z-index: 2; } /* поверх layer-1 */
+.layer-3 { position: relative; z-index: 10; } /* поверх всех */
+
+/* Все эти элементы создают новый stacking context */
+css
+.context-1 { position: relative; z-index: 1; }
+.context-2 { opacity: 0.99; }
+.context-3 { transform: translateZ(0); }
+.context-4 { filter: blur(0); }
+
+css.stacking-example {
+  position: relative;
+  z-index: 0; /* создает stacking context */
+}
+
+.behind { position: absolute; z-index: -1; } /* за фоном родителя */
+.normal { position: absolute; z-index: 0; }  /* нормальный уровень */
+.front { position: absolute; z-index: 1; }   /* впереди */
+
+/* Transform */
+css.transform-parent {
+  transform: translateX(0); /* создает containing block */
+}
+
+.fixed-child {
+  position: fixed;
+  top: 0; /* теперь относительно .transform-parent, а не viewport */
+}
